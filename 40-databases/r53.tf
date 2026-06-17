@@ -24,3 +24,4 @@ resource "aws_route53_record" "mysql" {
   records = [aws_instance.mysql.private_ip]
   allow_overwrite = true
 }
+
