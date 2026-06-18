@@ -1,4 +1,4 @@
-resource "aws_iam_role" "test_role" {
+resource "aws_iam_role" "mysql" {
   name = local.mysql_role_name #Roboshop-Dev-Mysql
 
   # Terraform's "jsonencode" function converts a
@@ -24,3 +24,9 @@ resource "aws_iam_role" "test_role" {
     local.common_tags
   )
 }
+
+resource "aws_iam_policy" "mysql" {
+  name        = "S3ReadOnlyAccessPolicy"
+  description = "A policy for MySQL Ec2 instance"
+  policy      = file("mysql-iam-policy.json")
+
