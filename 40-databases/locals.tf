@@ -4,7 +4,6 @@ locals {
         Project = var.project
         Environment = var.environment
         Terraform = "true"
-
     }
     # database subnet in 1a AZ
     database_subnet_id = split(",", data.aws_ssm_parameter.database_subnet_ids.value)[0]
