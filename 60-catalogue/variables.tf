@@ -7,9 +7,13 @@ variable "environment" {
 }
 
 variable "zone_id" {
-    default = "Z0558625374KS8URP4XXN"
+    default = "Z05013202FKF0ZL12WAOP"
 }
 
 variable "domain_name" {
-    default = "lokeshinfo.online"
+    default = "daws88s.online"
+}
+
+variable "app_version" {
+    default = "v3"
 }
