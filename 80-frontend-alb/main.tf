@@ -21,14 +21,14 @@ resource "aws_lb_listener" "https" {
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = "local.frontend_alb_certificate_arn"
+  certificate_arn   = local.frontend_alb_certificate_arn
 
   default_action {
     type = "fixed-response"
 
     fixed_response {
       content_type = "text/html"
-      message_body = "<h1>Hi, I am from HTTP Frontend ALB</h1>"
+      message_body = "<h1>Hi, I am from HTTPS Frontend ALB</h1>"
       status_code  = "200"
     }
   }
