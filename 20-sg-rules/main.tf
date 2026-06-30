@@ -156,7 +156,7 @@ resource "aws_security_group_rule" "user_backend_alb" {
   security_group_id = local.user_sg_id
 }
 
-# cart
+# Cart
 resource "aws_security_group_rule" "cart_bastion" {
   type              = "ingress"
   from_port         = 22
@@ -291,6 +291,7 @@ resource "aws_security_group_rule" "backend_alb_frontend" {
   security_group_id = local.backend_alb_sg_id
 }
 
+# Frontend
 resource "aws_security_group_rule" "frontend_bastion" {
   type              = "ingress"
   from_port         = 22
@@ -301,7 +302,6 @@ resource "aws_security_group_rule" "frontend_bastion" {
   security_group_id = local.frontend_sg_id
 }
 
-# Frontend
 resource "aws_security_group_rule" "frontend_frontend_alb" {
   type              = "ingress"
   from_port         = 80

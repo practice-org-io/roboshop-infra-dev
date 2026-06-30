@@ -207,3 +207,4 @@ resource "terraform_data" "catalogue_delete" {
     command = "aws ec2 terminate-instances --instance-ids ${aws_instance.catalogue.id} "
   }
 }
+

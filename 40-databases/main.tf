@@ -18,15 +18,15 @@ resource "terraform_data" "mongodb" {
   ]
 
   connection {
-    type = "ssh"
-    user = "ec2-user"
+    type     = "ssh"
+    user     = "ec2-user"
     password = "DevOps321"
-    host = aws_instance.mongodb.private_ip
+    host     = aws_instance.mongodb.private_ip
   }
 
   provisioner "file" {
-    source      = "bootstrap.sh"
-    destination = "/tmp/bootstrap.sh"
+    source      = "bootstrap.sh" # Local file path
+    destination = "/tmp/bootstrap.sh"    # Destination path on the remote machine
   }
 
   provisioner "remote-exec" {
@@ -57,15 +57,15 @@ resource "terraform_data" "bootstrap_redis" {
   ]
 
   connection {
-    type = "ssh"
-    user = "ec2-user"
+    type     = "ssh"
+    user     = "ec2-user"
     password = "DevOps321"
-    host = aws_instance.redis.private_ip
+    host     = aws_instance.redis.private_ip
   }
 
   provisioner "file" {
-    source      = "bootstrap.sh"
-    destination = "/tmp/bootstrap.sh"
+    source      = "bootstrap.sh" # Local file path
+    destination = "/tmp/bootstrap.sh"    # Destination path on the remote machine
   }
 
   provisioner "remote-exec" {
@@ -97,15 +97,15 @@ resource "terraform_data" "mysql" {
   ]
 
   connection {
-    type = "ssh"
-    user = "ec2-user"
+    type     = "ssh"
+    user     = "ec2-user"
     password = "DevOps321"
-    host = aws_instance.mysql.private_ip
+    host     = aws_instance.mysql.private_ip
   }
 
   provisioner "file" {
-    source      = "bootstrap.sh"
-    destination = "/tmp/bootstrap.sh"
+    source      = "bootstrap.sh" # Local file path
+    destination = "/tmp/bootstrap.sh"    # Destination path on the remote machine
   }
 
   provisioner "remote-exec" {
@@ -136,15 +136,15 @@ resource "terraform_data" "rabbitmq" {
   ]
 
   connection {
-    type = "ssh"
-    user = "ec2-user"
+    type     = "ssh"
+    user     = "ec2-user"
     password = "DevOps321"
-    host = aws_instance.rabbitmq.private_ip
+    host     = aws_instance.rabbitmq.private_ip
   }
 
   provisioner "file" {
-    source      = "bootstrap.sh"
-    destination = "/tmp/bootstrap.sh"
+    source      = "bootstrap.sh" # Local file path
+    destination = "/tmp/bootstrap.sh"    # Destination path on the remote machine
   }
 
   provisioner "remote-exec" {
